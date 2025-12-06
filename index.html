@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador De Infieles</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <button class="desarrollador">TK_FUISTELS</button>
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+
+    <div class="container fade">
+        <h1>Buscador</h1>
+
+        <label for="sheetSelect">
+            Selecciona la base de datos: <br>
+            <strong>Google Sheet:</strong> base de datos en línea (actualizada automáticamente).<br>
+            <strong>Local:</strong> base de datos en el servidor (última actualización: 05/12/2025).
+        </label>
+
+        <select id="sheetSelect">
+
+            <!-- Google Sheet -->
+            <option value="1YtWDlfgTm298Ix-Q5MYhvXM7AwLMhsCKUa7cuQaQdv8|Sheet1">
+                Base 1 (Bolivia - Google Sheets)
+            </option>
+
+            <!-- Local XLSX hoja específica -->
+            <option value="base_de_datos_locales/Base_de_infieles.xlsx|Base 2">
+                Base 2 (Bolivia - XLSX local)
+            </option>
+
+            <!-- Archivo JSON local
+            <option value="base_de_datos_locales/infieles.json">
+                Base JSON local
+            </option> -->
+
+            <!-- Web App URL directa
+            <option value="https://tusitio.com/webapp/datos">
+                Base desde Web App
+            </option> -->
+
+        </select>
+
+        <input type="text" id="search" placeholder="Escribe para buscar...">
+
+        <div id="status"></div>
+
+        <ul id="results"></ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

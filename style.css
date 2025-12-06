@@ -1,0 +1,215 @@
+/* ===== PALETA DE COLORES MODERNA ===== */
+:root {
+    --bg: #f0f2f5;
+    --text: #1a1a1a;
+    --card: #ffffff;
+    --border: #e0e0e0;
+    --accent: #5c6bc0;
+    --accent-hover: #3f51b5;
+    --success: #4caf50;
+    --error: #e53935;
+    --warning: #ffb300;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg: #121212;
+    --text: #e0e0e0;
+    --card: #1e1e1e;
+    --border: #333;
+    --accent: #7986cb;
+    --accent-hover: #5c6bc0;
+    --success: #81c784;
+    --error: #ef5350;
+    --warning: #ffd54f;
+    --shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* ===== DISEÑO GENERAL ===== */
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--shadow);
+}
+
+/* ===== TITULOS ===== */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: var(--accent);
+    animation: titleFade 1s ease;
+}
+
+/* ===== SELECT y INPUT ===== */
+input,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 15px;
+    background: var(--card);
+    color: var(--text);
+    font-size: 16px;
+    box-sizing: border-box;
+    /* IMPORTANTE */
+    transition: all 0.3s ease;
+}
+
+
+select:focus,
+input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px var(--accent);
+}
+
+/* ===== LISTA DE RESULTADOS ===== */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background: var(--card);
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease, transform 0.4s ease;
+    box-shadow: 0 4px 12px var(--shadow);
+    cursor: default;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+li.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+}
+
+li:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 25px var(--shadow);
+    border-color: var(--accent-hover);
+}
+
+/* ===== HIGHLIGHT TEXTO ===== */
+.highlight {
+    background-color: var(--accent-hover);
+    color: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* ===== BOTON TEMA ===== */
+.theme-toggle {
+    position: fixed;
+    right: 25px;
+    top: 25px;
+    font-size: 22px;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 4px 10px var(--shadow);
+    transition: all 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--accent-hover);
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* ===== BOTON DESARROLLADOR ===== */
+.desarrollador {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 4px 10px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.desarrollador:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05) rotate(-2deg);
+}
+
+/* ===== MENSAJES ===== */
+#status {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    display: none;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.status-error {
+    background: var(--error);
+    color: white;
+}
+
+.status-ok {
+    background: var(--success);
+    color: white;
+}
+
+.status-loading {
+    background: var(--warning);
+    color: #222;
+}
+
+/* ===== ANIMACIONES ===== */
+.fade {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleFade {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
